@@ -10,7 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 This dataset contains name, artist, and lyrics for *57650 songs in English*. The data has been acquired from LyricsFreak through scraping.
 """
-songs = pd.read_csv('https://github.com/PatienceNyasulu/music_recommender/blob/master/content%20based%20recommedation%20system/songdata.csv')
+songs = pd.read_csv('content based recommedation system/songdata.csv')
 
 songs.head()
 
