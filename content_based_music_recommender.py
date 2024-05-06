@@ -89,10 +89,10 @@ def main():
     st.title("Music Recommendation System")
 
     # Sidebar input
-    song_title = st.sidebar.text_input("Enter a song title")
-    number_songs = st.sidebar.slider("Number of songs to recommend", min_value=1, max_value=10, value=5)
+    song_title = st.text_input("Enter a song title")
+    number_songs = st.slider("Number of songs to recommend", min_value=1, max_value=10, value=5)
 
-    if st.sidebar.button("Recommend"):
+    if st.button("Recommend"):
         # Get the index of the song in the DataFrame
         song_index = songs[songs['song'] == song_title].index[0]
         # Create an instance of the ContentBasedRecommender class
