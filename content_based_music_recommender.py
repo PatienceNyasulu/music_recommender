@@ -48,7 +48,7 @@ class ContentBasedRecommender:
     def _print_message(self, song, recom_song):
         rec_items = len(recom_song)
 
-        print(f'The {rec_items} recommended songs for {song} are:')
+        print(f'The {rec_items} recommended song for {song} are:')
         for i in range(rec_items):
             print(f"Number {i+1}:")
             print(f"{recom_song[i][1]} by {recom_song[i][2]} with {round(recom_song[i][0], 3)} similarity score")
