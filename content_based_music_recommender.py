@@ -97,6 +97,14 @@ def main():
         recommendation = {'song': song_title, 'number_songs': number_songs}
         # Get recommendations
         recommendations = recommender.recommend(recommendation)
+               
+        # Display recommendations
+        st.write(f"The {number_songs} recommended songs for {song_title} are:")
+        for i, rec_song in enumerate(recommendations):
+            st.write(f"Number {i+1}:")
+            st.write(f"{rec_song[1]} by {rec_song[2]} with {round(rec_song[0], 3)} similarity score")
+            st.write("--------------------")
+
 
 if __name__ == '__main__':
     main()
