@@ -60,10 +60,10 @@ class ContentBasedRecommender:
         # Get number of songs to recommend
         number_songs = recommendation['number_songs']
         # Get the index of the song in the DataFrame
-        song_index = self.song[self.song['song'] == song].index[0]
+        ##song_index = self.song[self.song['song'] == song].index[0]##
         # Get the number of songs most similars from matrix similarities
         if song in self.matrix_similar:
-            recom_song = sorted(self.matrix_similar[song_index], reverse=True)[:number_songs]
+            recom_song = sorted(self.matrix_similar[song], reverse=True)[:number_songs]
             return recom_song
         else:
             return []
@@ -94,11 +94,11 @@ def main():
 
     if st.button("Recommend"):
         # Get the index of the song in the DataFrame
-        song_index = song[song['song'] == song_title].index[0]
+        ###song_index = song[song['song'] == song_title].index[0]##
         # Create an instance of the ContentBasedRecommender class
         recommender = ContentBasedRecommender(cosine_similarities)
         # Define the recommendation input
-        recommendation = {'song': song_index, 'number_songs': number_songs}
+        recommendation = {'song': song_title, 'number_songs': number_songs}
         # Get recommendations
         recommendations = recommender.recommend(recommendation)
                
