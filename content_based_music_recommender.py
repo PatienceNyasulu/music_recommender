@@ -104,9 +104,10 @@ def main():
                
         # Display recommendations
         st.write(f"The {number_songs} recommended songs for {song_title} are:")
-        for i, rec_song in enumerate(recommendations):
-            st.write(f"Number {i+1}:")
-            st.write(f"{rec_song[1]} by {rec_song[2]} with {round(rec_song[0], 3)} similarity score")
+        for i, rec_song in recommendations:
+            st.write('Recommendations:', rec_song)
+            #st.write(f"Number {i+1}:")
+            #st.write(f"{rec_song[1]} by {rec_song[2]} with {round(rec_song[0], 3)} similarity score")
             st.write("--------------------")
 
 
