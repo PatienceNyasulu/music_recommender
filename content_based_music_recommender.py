@@ -57,12 +57,6 @@ class ContentBasedRecommender:
     def recommend(self, recommendation):
         # Get song to find recommendations for
         song = recommendation['song']
-        # Get the number of songs most similars from matrix similarities
-        if song in self.matrix_similar:
-            recom_song = sorted(self.matrix_similar[song], reverse=True)[:number_songs]
-            return recom_song
-        else:
-            return []
 
 
 
@@ -72,7 +66,6 @@ recommedations = ContentBasedRecommender(similarities)
 
 recommendation = {
     "song": songs['song'].iloc[10],
-    "number_songs": 4
 }
 
 recommedations.recommend(recommendation)
