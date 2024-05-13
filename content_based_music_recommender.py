@@ -90,7 +90,7 @@ def main():
 
     # Sidebar input
     song_title = st.text_input("Enter a song title")
-    number_songs = st.slider("Number of songs to recommend", min_value=1, max_value=10, value=5)
+    
 
     if st.button("Recommend"):
         # Get the index of the song in the DataFrame
@@ -98,12 +98,12 @@ def main():
         # Create an instance of the ContentBasedRecommender class
         recommender = ContentBasedRecommender(cosine_similarities)
         # Define the recommendation input
-        recommendation = {'song': song_title, 'number_songs': number_songs}
+        recommendation = {'song': song_title}
         # Get recommendations
         recommendations = recommender.recommend(recommendation)
                
         # Display recommendations
-        st.write(f"The {number_songs} recommended songs for {song_title} are:")
+        st.write(f"The recommended songs for {song_title} are:")
         for recommendations in songs['song']:
             st.write('Recommendations:', recommendations)
             #st.write(f"Number {i+1}:")
